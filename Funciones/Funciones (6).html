@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><body>
+<script>
+let pasaraFarenheit = (grado) => {
+  return grado * 1.8 + 32;
+};
+
+let pasaraCelsius = (fahrenheit) => {
+  return (fahrenheit - 32) / 1.8;
+};
+
+var resultFahrenheit = pasaraFarenheit(22);
+alert("22 grados Celsius son " + resultFahrenheit + " grados Fahrenheit.");
+
+var resultCelsius = pasaraCelsius(71.6);
+alert("71.6 grados Fahrenheit son " + resultCelsius + " grados Celsius.");
+</script>
+</body>
+</html>
