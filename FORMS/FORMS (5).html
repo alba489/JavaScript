@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculadora de Cuadrado y Cubo</title>
+<script>
+function calcularCuadrado(numero) {
+    return numero * numero;
+}
+
+function calcularCubo(numero) {
+    return numero * numero * numero;
+}
+
+function mostrarResultados() {
+    var numero = parseFloat(document.getElementById("numero").value);
+    var cuadrado = calcularCuadrado(numero);
+    var cubo = calcularCubo(numero);
+    document.getElementById("resultadoCuadrado").innerHTML = "Cuadrado: " + cuadrado;
+    document.getElementById("resultadoCubo").innerHTML = "Cubo: " + cubo;
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="numero">Introduce un número:</label>
+    <input type="number" id="numero" name="numero">
+    <button type="button" onclick="mostrarResultados()">Calcular</button>
+</form>
+
+<div id="resultadoCuadrado"></div>
+<div id="resultadoCubo"></div>
+
+</body>
+</html>

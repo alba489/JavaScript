@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculadora de Peso de Referencia</title>
+<script>
+function calcularPesoReferencia() {
+    var altura = parseFloat(document.getElementById("altura").value);
+    var edad = parseFloat(document.getElementById("edad").value);
+    var sexo = document.getElementById("sexo").value;
+    var pesoActual = parseFloat(document.getElementById("pesoActual").value);
+    var pesoReferencia;
+
+    if (sexo === 'H') {
+        pesoReferencia = 50 + ((altura - 150) / 4) * 3 + (edad - 20) / 4;
+    } else if (sexo === 'M') {
+        pesoReferencia = 45.5 + ((altura - 150) / 2.5) + (edad - 20) / 4;
+    } else {
+        alert("Por favor, seleccione un sexo válido (H para hombre, M para mujer).");
+        return;
+    }
+
+    document.getElementById("resultado").innerHTML = "El peso de referencia es: " + pesoReferencia.toFixed(1) + " kg";
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="altura">Altura (cm):</label>
+    <input type="number" id="altura" name="altura" step="0.1">
+    <br><br>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad">
+    <br><br>
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo">
+        <option value="H">Hombre</option>
+        <option value="M">Mujer</option>
+    </select>
+    <br><br>
+    <label for="pesoActual">Peso Actual (kg):</label>
+    <input type="number" id="pesoActual" name="pesoActual" step="0.1">
+    <br><br>
+    <button type="button" onclick="calcularPesoReferencia()">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

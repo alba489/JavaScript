@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculadora de Nota Media Ponderada</title>
+<script>
+function calcularNotaMediaPonderada() {
+    var nota1 = parseFloat(document.getElementById("nota1").value);
+    var nota2 = parseFloat(document.getElementById("nota2").value);
+    var ponderacion1 = parseFloat(document.getElementById("ponderacion1").value);
+    var ponderacion2 = parseFloat(document.getElementById("ponderacion2").value);
+    var notaMediaPonderada = (nota1 * (ponderacion1 / 100)) + (nota2 * (ponderacion2 / 100));
+    document.getElementById("resultado").innerHTML = "La nota media ponderada es: " + notaMediaPonderada.toFixed(2);
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1" name="nota1" step="0.01" min="0" max="10">
+    <label for="ponderacion1">Ponderación (%) :</label>
+    <input type="number" id="ponderacion1" name="ponderacion1" step="0.01" min="0" max="100">
+    <br><br>
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2" name="nota2" step="0.01" min="0" max="10">
+    <label for="ponderacion2">Ponderación (%) :</label>
+    <input type="number" id="ponderacion2" name="ponderacion2" step="0.01" min="0" max="100">
+    <br><br>
+    <button type="button" onclick="calcularNotaMediaPonderada()">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

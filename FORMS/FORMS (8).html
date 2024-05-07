@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conversor de Celsius a Fahrenheit</title>
+<script>
+function convertirCelsiusAFahrenheit() {
+    // Obtener el valor ingresado por el usuario en grados Celsius
+    var celsius = parseFloat(document.getElementById("celsius").value);
+    
+    // Convertir Celsius a Fahrenheit utilizando la fórmula
+    var fahrenheit = (celsius * 9/5) + 32;
+    
+    // Mostrar el resultado en la página
+    document.getElementById("resultado").innerHTML = celsius + " °C equivale a " + fahrenheit.toFixed(2) + " °F";
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="celsius">Introduce la temperatura en Celsius:</label>
+    <input type="number" id="celsius" name="celsius">
+    <button type="button" onclick="convertirCelsiusAFahrenheit()">Convertir</button>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

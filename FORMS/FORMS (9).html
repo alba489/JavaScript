@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conversor de Temperaturas</title>
+<script>
+function convertirCelsiusAFahrenheit() {
+    var celsius = parseFloat(document.getElementById("celsius").value);
+    var fahrenheit = (celsius * 9/5) + 32;
+    document.getElementById("resultadoFahrenheit").innerHTML = celsius + " °C equivale a " + fahrenheit.toFixed(2) + " °F";
+}
+
+function convertirFahrenheitACelsius() {
+    var fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
+    var celsius = (fahrenheit - 32) * 5/9;
+    document.getElementById("resultadoCelsius").innerHTML = fahrenheit + " °F equivale a " + celsius.toFixed(2) + " °C";
+}
+</script>
+</head>
+<body>
+
+<h2>Conversor de Temperaturas</h2>
+
+<form>
+    <label for="celsius">Introduce la temperatura en Celsius:</label>
+    <input type="number" id="celsius" name="celsius">
+    <button type="button" onclick="convertirCelsiusAFahrenheit()">Convertir a Fahrenheit</button>
+</form>
+
+<div id="resultadoFahrenheit"></div>
+
+<form>
+    <label for="fahrenheit">Introduce la temperatura en Fahrenheit:</label>
+    <input type="number" id="fahrenheit" name="fahrenheit">
+    <button type="button" onclick="convertirFahrenheitACelsius()">Convertir a Celsius</button>
+</form>
+
+<div id="resultadoCelsius"></div>
+
+</body>
+</html>
